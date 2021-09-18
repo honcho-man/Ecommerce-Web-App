@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 var cookieParser = require('cookie-parser')
 router.use(cookieParser())
-var control = require('../controllers/index')
+var control = require('../controllers/client-index')
 router
     .get('/', control.getHome)
 module.exports = router;

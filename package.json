@@ -4,7 +4,7 @@
   "description": "ecommerce web app",
   "main": "./server/index.js",
   "scripts": {
-    "test": "nodemon",
+    "dev": "nodemon --ext pug,css,js",
     "start": "node server/index.js",
     "start:server": "node server/index.js"
   },

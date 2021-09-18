@@ -1,0 +1,25 @@
+doctype html
+html.theme-light
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0")    
+    title= title
+    //bootstrap
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-grid.min.css')
+    //font icons
+    link(rel='stylesheet', href='all.css')
+    //stylesheets
+    link(rel='stylesheet', href='admin-css/small-screen-components.css')
+    link(rel='stylesheet', href='admin-css/wide-screen-components.css')
+    link(rel='stylesheet', href='admin-css/admin.css')
+    link(rel='stylesheet', href='main-css/admin.css')
+  body.body-theme.preloader-active
+    block content
+    
+    script(src="/jquery.slim.min.js")
+    script(src="/jquery.min.js")
+    script(src="js/bootstrap.min.js")
+
+

@@ -14,15 +14,16 @@ var createHttpError = require("http-errors");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //var compression = require('compression');
+const app = express();
 
 //config vars
 const db = require('../configurations/env-vars-connection').get(process.env.NODE_ENV)
 
-const app = express();
-
 //routes
-var indexRouter = require('../routes/index')
-app.use('/', indexRouter);
+var clientRouter = require('../routes/client-route')
+var adminRouter = require('../routes/admin-route')
+app.use('/', clientRouter);
+app.use('/admin', adminRouter);
 
 //set port
 const port = db.PORT;
@@ -38,6 +39,7 @@ app.use(cookieParser());
 app.use(express.static('public'))
 app.use(express.static('node_modules/bootstrap/dist/'));
 app.use(express.static('node_modules/jquery/dist'));
+app.use(express.static('node_modules/@fortawesome/fontawesome-free/css'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,11 +57,6 @@ app.use(function(err, req, res, next) {
     res.render('error', { title: 'Error!' });
 });
 
-/** Create HTTP server. */
-const server = http.createServer(app);
-server.listen(port);
-/** Event listener for HTTP server "listening" event. */
-//Start Server
-server.on("listening", () => {
-    console.log(`App listening on port::${port}`)
-});
+app.listen(db.PORT, () => {
+    console.log('app listening at :'+port)
+})

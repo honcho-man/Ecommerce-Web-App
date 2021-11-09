@@ -1,0 +1,455 @@
+.theme-light {
+    --font-inv: white;
+    --font: black;
+    --bg: white;
+    --bg-inv: black;
+    --input-border: #87878786;
+    --input-inner-font: #ABABAB;
+    --link: #571aff;
+}
+
+.theme-dark {
+    --font: white;
+    --font-inv: black;
+    --bg-inv: white;
+    --bg: #000000d4;
+    --input-border: #87878786;
+    --input-inner-font: #ABABAB;
+    --link: #571aff;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../webfonts/Poppins-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: 'Poppins light';
+    src: url(../webfonts/Poppins-Light.ttf);
+}
+
+
+@font-face {
+    font-family: 'Poppins bold';
+    src: url(../webfonts/Poppins-Bold.ttf);
+}
+
+.font {
+    font-family: 'Poppins';
+}
+
+.font-light {
+    font-family: 'Poppins light';
+}
+
+.font-bold {
+    font-family: 'Poppins bold';
+}
+
+.regular-size {
+    font-size: 16px;
+}
+
+.light-size {
+    font-size: 14px;
+}
+
+.bg-0 {
+    background: transparent !important;
+}
+
+
+.bs-0 {
+    box-shadow: none !important;
+}
+
+
+body {
+    font-family: 'Poppins';
+    background: var(--bg);
+    color: var(--font);
+}
+
+a {
+    cursor: pointer;
+    background: unset;
+    border: unset;
+    outline: unset;
+    color: var(--link);
+}
+button {
+    cursor: pointer;
+    background: unset;
+    border: unset;
+    outline: unset;
+    color: var(--font);
+}
+
+button[type=submit]>span {
+    position: relative;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+}
+
+input:focus {
+    outline: none;
+    background: transparent;
+}
+
+img {
+    width: 100%;
+}
+
+.red {
+    color: red !important;
+}
+
+.fail {
+    border: 1px solid red !important;
+}
+
+
+.fail-pin {
+    border-bottom: 3px solid red !important;
+}
+
+
+.fail-box {
+    border: 1px solid red !important;
+    background: #f88296;
+    color: white;
+}
+
+.fail::placeholder {
+    color: red !important;
+}
+
+.green {
+    border: 1px solid green !important;
+}
+
+.green-box {
+    border: 1px solid green !important;
+    background: #23b915;
+    color: white;
+}
+
+.success-icon {
+    font-size: 4.5em;
+    color: green !important;
+    border-radius: 50%;
+    background: white;
+}
+
+.fade-in {
+    display: none;
+}
+
+.alert {
+    width: 240px;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+    padding-right: 35px;
+}
+
+.close-alert {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+/*general header*/
+.general-header .brand {
+    width: 80px;
+}
+
+.general-header {
+    position: fixed;
+    top: 0;
+    background: var(--bg);
+    z-index: 20;
+    left: 0;
+    box-shadow: 0px 0px 10px #0000001a;
+}
+
+.bars {
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/*side menu*/
+.side-menu {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    right: 0;
+    background: transparent;
+    top: 58px;
+}
+
+#nav-icon2 span {
+    background: var(--font);
+}
+
+.void {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000031;
+    left: 0;
+}
+
+.side-menu-content {
+    position: absolute;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--bg-inv);
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 5px #0000001a;
+    color: var(--font);
+}
+
+.themer {
+    color: var(--font-inv);
+    background: none;
+    border: none;
+    outline: none;
+    padding: 15px 28px;
+    font-size: 25px;
+}
+
+/*form*/
+.-form-section-1 {
+    border: 0.6px solid var(--input-border);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #0000001c;
+    background: var(--bg);
+    color: var(--font);
+}
+
+.-form-section-1 input {
+    border: 0.6px solid var(--input-border);
+    border-radius: 6px;
+    padding: 15px;
+    font-family: 'Poppins light';
+    font-size: 14px;
+    color: var(--font);
+    text-transform: capitalize;
+    background: transparent;
+}
+
+.-form-section-1 input[type=email],
+.password-group input,
+.password-group-II input {
+    text-transform: none !important;
+}
+
+.-form-section-1 input:focus {
+    background: transparent;
+    border: 0.6px solid var(--font);
+    box-shadow: none;
+    outline: none;
+}
+
+.-form-section-1 input::placeholder {
+    color: var(--input-inner-font);
+}
+
+.-form-section-1 input:disabled {
+    color: var(--input-inner-font);
+    background: transparent;
+}
+
+.-form-section-1 label {
+    font-size: 16px;
+}
+
+.country-codes {
+    width: 80px;
+    border: 0.6px solid var(--input-border);
+    color: var(--input-inner-font);
+    background: transparent !important;
+    font-size: 14px;
+    border-radius: 6px;
+    font-family: 'Poppins light';
+}
+
+.country-codes:focus {
+    background: transparent;
+    border: 0.6px solid var(--font);
+    box-shadow: none;
+    outline: none;
+}
+
+.-form-section-1 span {
+    position: absolute;
+    font-size: 13px;
+}
+
+.eye {
+    position: absolute;
+    margin: 50px 15px 5px -25px;
+    font-size: 15px !important;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--font);
+}
+
+
+.-form-section-1 input[type=submit] {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    outline: none;
+    background: var(--font);
+    color: var(--font-inv);
+    width: 100%;
+    text-transform: capitalize;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Poppins bold' !important;
+}
+
+.-form-section-1 input[type=submit]:hover {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s;
+    background: var(--font-inv);
+    color: var(--font);
+    border: 1px solid var(--font) !important;
+}
+
+.-form-section-1 input[type=submit]:disabled {
+    background: var(--input-inner-font);
+}
+
+.form-image {
+    font-size: 30px;
+}
+
+.form-image-contn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: var(--font);
+    height: 100%;
+}
+
+#inlineFormInputGroupUsername {
+    border-bottom-right-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    padding-right: 35px !important;
+}
+
+.-form-section-1 input[type=tel]:disabled,
+.phone-cover {
+    cursor: text;
+}
+
+.clear-phone {
+    position: absolute;
+    right: 0;
+    margin: 15px 12px 5px -25px;
+    color: var(--input-inner-font);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/*email verification*/
+.prev-btn {
+    font-size: 20px;
+}
+
+.whiten-img {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.-pin-form-section {
+    position: relative;
+}
+
+.-pin-form-section span {
+    display: flex;
+    justify-content: center;
+    width: 55px;
+}
+
+.-pin-form-section span>div {
+    position: absolute;
+    width: 25px;
+    top: 0;
+    z-index: 5;
+    border: 1px solid var(--font-inv);
+    background: var(--font-inv);
+    z-index: 200;
+    cursor: none;
+    height: 35px;
+}
+
+.-pin-form-section input {
+    height: 30px;
+    position: relative;
+    border: none;
+    border-bottom: 3px solid var(--input-inner-font);
+    z-index: 15;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: var(--font);
+}
+
+.-pin-form-section-contn {
+    width: 150px;
+}
+
+
+.-form-section-1 input[type=submit],
+.-form-section-1 button[type=submit] {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    outline: none;
+    background: var(--font);
+    color: var(--font-inv);
+    width: 100%;
+    text-transform: capitalize;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Poppins bold' !important;
+    font-size: 16px;
+}
+
+.-form-section-1 input[type=submit]:hover,
+.-form-section-1 button[type=submit]:hover {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s;
+    background: var(--font-inv);
+    color: var(--font);
+    border: 1px solid var(--font) !important;
+}
+
+.-form-section-1 input[type=submit]:disabled,
+.-form-section-1 button[type=submit]:disabled {
+    background: var(--input-inner-font) !important;
+    color: var(--font-inv) !important;
+    border: 1px solid transparent !important;
+    cursor: default;
+}

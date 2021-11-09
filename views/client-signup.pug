@@ -1,0 +1,93 @@
+include client-head      
+	script.
+		var errType = '!{errType}',
+			alertmsg = '!{alert}';
+		$(document).ready(function () {
+			var emailImg = $('.form-image'),
+			pageTheme = localStorage.getItem('theme');	
+			if (pageTheme == 'dark') {
+				emailImg.addClass('whiten-img');
+			}
+		});
+	.d-flex.justify-content-center.align-items-center.pb-5.pb-md-0
+		.col-12.col-md-12.p-1.pt-md-3.pb-5.pb-md-0
+			.row
+				.col-lg-5.col-md-12.-form-section-1.p-3.px-md-4
+					.row.px-3.pb-md-2
+						.col-12.px-0.py-2.py-md-0.font-light.pt-md-3
+							h3 Welcome !
+							h4.d-none.d-md-none Welcome !
+						.col-12.px-0.py-2.py-md-0.font
+							h3 Let's get you set up
+					form(method="POST" action="/register-client" autocomplete="off").sign-up-form.form-row
+						//.col-12.col-md-6.text-left.pr-md-3.py-1.py-md-0
+							label(for="firstname") First name
+							.form-group.firstname-group
+								input(type="text" name="firstname" placeholder="First name").firstname
+								.text-left
+									span.text-muted.fade-in.font-light.red
+						//.col-12.col-md-6.text-left.py-1.py-md-0
+							label(for="lastname") Last name
+							.form-group.lastname-group
+								input(type="text" name="lastname" placeholder="Last name").lastname
+								.text-left
+									span.text-muted.fade-in.font-light.red
+						.col-12.col-md-12.text-left.py-1.py-md-1
+							label(for="email") Email 
+							.form-group.email-group
+								input(type="email" name="email" placeholder="Enter your Email").email
+								.text-left
+									span.text-muted.fade-in.font-light.red
+						.col-12.col-md-6.text-left.py-1.py-md-1.pr-md-3
+							label(for="username") Username        
+							.form-group.username-group
+								input(type="text" name="username" placeholder="Create your User name").username
+								.text-left
+									span.text-muted.fade-in.font-light.red 
+						.col-12.col-md-6.text-left.py-1.py-md-1
+							.d-flex.p-0
+								label(for="phone") Contact number 
+								.font-light.light-size.pl-1 (optional)
+							.form-group.phone-group
+								.form-row.align-items-center
+									.col-12
+										.input-group
+											.input-group-prepend                                        
+												select(name="code").country-codes.input-group-text.pl-2.pr-2.false.text-left
+													option(value="") Select country code
+											input.form-control#inlineFormInputGroupUsername.true(type="tel" name="phone" autocomplete="off" value="+234" placeholder="Phone number").phone                                                						               
+											button(type="button" onclick="clearPhone(this)").clear-phone.fade-in
+												i.fa.fa-times
+										.text-left
+											span.text-muted.fade-in.font-light.red 
+						.col-12.col-md-6.text-left.pr-md-3.py-1.py-md-1
+							label(for="password") Password
+							.form-group.password-group
+								input(type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{}" minlength="8" maxlength="50").password
+								button(type="button").eye
+									i.fa.fa-eye(onclick="Eye(this)" role="button").true
+								.text-left
+									span.text-muted.fade-in.font-light.red
+						.col-12.col-md-6.text-left.py-1.py-md-1
+							label(for="Confirm Password") Confirm Password
+							.form-group.password-group-II
+								input(type="password" name="passwordII" placeholder="Confirm your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{}" minlength="8" maxlength="50").password
+								//span.eye
+									i.fa.fa-eye(onclick="Eye(this)").true
+								.text-left
+									span.text-muted.fade-in.font-light.red
+						.col-12.text-center.px-0.py-1
+							input(type="submit" value="sign up")
+						.col-12.text-center.text-md-left.px-0.py-0.light-size
+							section.col-12.py-2
+								span.font-light.position-relative 
+									|Already have an account?
+								span.font-bold.position-relative.pl-2
+									a(href="/login") 
+										|Sign in
+				.col-lg-7.col-md-12.d-none.d-md-block
+					.form-image-contn.py-md-4.py-lg-0.col-12
+						.container-fluid.text-center.font-bold
+							img.form-image(src="img/backgrounds/idea.png" alt="Sign up")
+include prereq-scripts
+script(src='client-js/register-script.js')

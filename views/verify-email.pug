@@ -1,0 +1,63 @@
+extends client-layout
+
+block content
+	script.
+		$(document).ready(function () {
+			const emailImg = $('#emailImg'),
+			pageTheme = localStorage.getItem('theme');			
+			if (pageTheme == 'dark') {
+				emailImg.addClass('whiten-img');
+			}
+		});
+		const email = '!{email}';
+	.col-12.p-0.verify-email-section
+		.col-12.py-4.px-4.px-md-5
+			button(type="button").prev-btn
+				i.fa.fa-arrow-left(aria-hidden='true')
+		//.col-12 
+			span.meeh
+		.container-fluid
+			.row 
+				if (alert)
+					.col-12
+						.container-fluid.text-center.font-bold
+							h1=alert
+				else
+					.col-12
+						.container-fluid.text-center.font-bold.px-0.py-3
+							img(src="img/icons/email.png" id="emailImg" style="width:70px !important;")
+					.col-12
+						.container-fluid.text-center.font-bold.px-0.py-3
+							h3=msg
+					.col-12.-pin-form
+						.container-fluid.text-center.font-bold.px-0.py-2
+							section 
+								span.font-light Enter the OTP sent to 
+								span.font-bold #{email}
+						.d-flex.p-0.justify-content-center
+							.-pin-form-section-contn.px-1.py-4
+								.-pin-form-section
+									form.px-0
+										//section.d-flex.p-0.justify-content-center
+											span.p-0
+												.p-0
+											span.p-0
+												.p-0
+											span.p-0
+												.p-0
+											span.p-0
+												.p-0
+										input.-pin-input(type="tel" inputmode="numeric" pattern="[0-9]" autocomplete="new-password" minlength="4" maxlength="4" required)
+						.col-12.text-center.py-4
+							section.-pin-link-section
+								span.font-light Didn't receive any OTP? 
+								span.font-bold 
+									a(href="#") 
+										|RESEND
+						.-form-section-1.col-12.bg-0.border-0.text-center.bs-0.-pin-submit
+							button(type="submit").text-center.-pin-submit-btn
+								span.submit-text verify &#38; proceed
+								span.submit-loader.fade-in
+									i.fa.fa-spinner.fa-spin(aria-hidden='true')
+					.text-center.col-12.-pin-success-section
+	include prereq-scripts

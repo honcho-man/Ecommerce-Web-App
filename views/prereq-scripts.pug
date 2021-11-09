@@ -1,0 +1,18 @@
+if (alert)
+    .alert.fail-box
+        span #{alert}
+        button.close-alert
+            i.fa.fa-times
+else
+    .alert.fade-in
+        span 
+        button.close-alert
+            i.fa.fa-times
+script(src="/jquery.slim.min.js")
+script(src="/jquery.min.js")
+script(src="js/bootstrap.min.js")
+script.
+    //footer alertBox
+    $('.close-alert').on('click', (e) => {
+        $('.alert').fadeOut('fast')
+    })

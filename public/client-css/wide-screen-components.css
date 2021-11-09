@@ -1,3 +1,86 @@
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .main {
+        width: 100%;
+        position: relative;
+    }
+    
+    .header-section {
+        padding-right: 60px !important;
+        padding-left: 60px !important;
+        display: flex;
+        justify-content: center;
+    }
 
-@media only screen and (min-width: 1200px) {}
+    .main-header {
+        width: 1440px;
+    }
+
+    .section {
+        width: 1440px;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    
+    .side-menu {
+        z-index: 1;
+    }
+
+    .side-menu-close {
+        transform: translateX(0px);
+    }
+    
+    
+    .side-menu-close- {
+        transform: translateX(0px) !important;
+    }
+    
+
+    .side-menu-content-close {
+        transform: translateX(170px);
+    }
+
+    .side-menu-content {
+        z-index: 10;
+    }
+    .main {
+        position: absolute;
+        left: 0;
+    }
+
+    .-form-section-1 input[type="submit"],
+    .-form-section-1 button[type="submit"] {
+        width: 25% !important;
+    }
+        
+    .-form-section-1 input {
+        padding: 10px !important;
+    }
+
+    .eye {
+        margin: 47px 25px 5px -25px !important;
+    }
+    
+    .alert {
+        width: max-content !important;
+    }
+
+    .prev-btn {
+        font-size: 40px !important;
+    }
+       
+    .clear-phone {
+        margin: 10px 12px 5px -25px !important;
+    }
+
+    .verify-email-section {
+        font-size: x-large !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .section {
+        width: 1440px;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}

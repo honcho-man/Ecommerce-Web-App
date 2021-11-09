@@ -1,25 +1,38 @@
 doctype html
 html.theme-light
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="ie=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0")    
-    title= title
-    //bootstrap
-    link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/bootstrap-grid.min.css')
-    //font icons
-    link(rel='stylesheet', href='all.css')
-    //stylesheets
-    link(rel='stylesheet', href='client-css/small-screen-components.css')
-    link(rel='stylesheet', href='client-css/wide-screen-components.css')
-    link(rel='stylesheet', href='client-css/client.css')
-    link(rel='stylesheet', href='main-css/main.css')
-  body.body-theme.preloader-active
-    block content
-    
-    script(src="/jquery.slim.min.js")
-    script(src="/jquery.min.js")
-    script(src="js/bootstrap.min.js")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0")    
+		title= title
+		//icons
+		link(rel="apple-touch-icon", sizes="180x180", href="img/logo/white-apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="img/logo/white-favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="img/logo/white-favicon-16x16.png")
+		link(rel="manifest", href="img/logo/site.webmanifest")
+		//bootstrap
+		link(rel='stylesheet', href='css/bootstrap.min.css')
+		link(rel='stylesheet', href='css/bootstrap-grid.min.css')
+		//font icons
+		link(rel='stylesheet', href='all.min.css')
+		//stylesheets
+		link(rel='stylesheet', href='client-css/small-screen-components.css')
+		link(rel='stylesheet', href='client-css/wide-screen-components.css')
+		link(rel='stylesheet', href='client-css/client.css')
+		link(rel='stylesheet', href='main-css/animations.css')
+		link(rel='stylesheet', href='main-css/main.css')
+		link(rel='stylesheet', href='main-css/main-wide.css')
+		//preload jquery
+		script(src="/jquery.min.js")
+		script.
+			var auth = '!{auth}';
+	body.theme-light
+		block content
 
-
+		script(src="main-js/main.js")
+		script(src="main-js/requests.js")
+		script(src="main-js/req-errors.js")
+		script.
+			if (auth !== undefined) {
+				$('.main').removeClass('col-md-11').addClass('col-md-12')
+			}

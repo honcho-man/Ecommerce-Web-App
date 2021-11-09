@@ -1,3 +1,21 @@
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+    .header-section {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+
+    .section {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    
+    .side-menu-close {
+        transform: translateX(-3000px);
+    }
+
+    .side-menu,.void,.side-menu-content {
+        z-index: 10;
+    }
+}
 
 @media only screen and (max-width: 400px) {}

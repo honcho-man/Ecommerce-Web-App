@@ -1,0 +1,7 @@
+include client-head
+    if (user)
+        .container-fluid.p-4.div #{user.username}
+    else
+        h1.p-4 null
+include prereq-scripts
+script(src="client-js/login-options-script.js")

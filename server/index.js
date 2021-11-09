@@ -16,6 +16,20 @@ var logger = require('morgan');
 //var compression = require('compression');
 const app = express();
 
+
+var livereload = require("livereload");
+var connectLiveReload = require("connect-livereload");
+
+const livereloadserver = livereload.createServer();
+livereloadserver.server.once('connection', () => {
+    setTimeout(() => {
+        livereloadserver.refresh('/')
+    }, 10);
+})
+
+app.use(connectLiveReload());
+
+
 //config vars
 const db = require('../configurations/env-vars-connection').get(process.env.NODE_ENV)
 
@@ -40,6 +54,7 @@ app.use(express.static('public'))
 app.use(express.static('node_modules/bootstrap/dist/'));
 app.use(express.static('node_modules/jquery/dist'));
 app.use(express.static('node_modules/@fortawesome/fontawesome-free/css'));
+//app.use(express.static('/node_modules/get-google-fonts/'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,5 +73,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(db.PORT, () => {
-    console.log('app listening at :'+port)
+    console.log('app listening at ::'+port)
 })
+
+module.exports = app;

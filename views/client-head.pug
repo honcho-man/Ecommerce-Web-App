@@ -1,0 +1,70 @@
+extends client-layout
+
+block content
+	// side menu
+	if (auth)
+		.container-fluid.side-menu.side-menu-close
+			.void.side-menu-close.d-md-none(onclick="closeSideMenu()")
+			.side-menu-content.side-menu-close.side-menu-content-close.pt-3
+				nav.nav.flex-column
+					li
+						i.fa.fa-moon
+					li.nav-item
+						a.nav-link.active(href="#") Item 1
+					li.nav-item
+						a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Item 2
+	else
+		.container-fluid.side-menu.side-menu-close.d-md-none.d-block
+			.void.side-menu-close.d-md-none(onclick="closeSideMenu()")
+			.side-menu-content.side-menu-close.side-menu-content-close.pt-3
+				nav.nav.flex-column
+					li.text-right
+						button.themer.true
+							i.fa.fa-cloud-moon.fa-flip-horizontal
+					li.nav-item
+						a.nav-link.active(href="#") Item 1
+					li.nav-item
+						a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Item 2
+	// general header
+	.container-fluid.general-header.header-section
+		.main-header
+			.row
+				.col-md-2.d-sm-none.d-none.d-md-block.lg-gen-brand.pl-0.pr-0.pt-md-2.pb-md-2
+					a(href="/")
+						img.brand(src="img/logo/black logo.png", alt="EWA")
+				.col-4.d-sm-block.d-block.d-md-none.sm-gen-brand.pl-0.pr-0.pt-2.pb-2
+					a(href="/")
+						img.brand(src="img/logo/black logo.png", alt="EWA")
+				.col-md-9.d-sm-none.d-none.d-md-block.lg-gen-nav.pl-0.pr-0
+					if (!auth)
+						nav.nav
+							li.nav-item
+								a.nav-link.active(href="#") Item 1
+							li.nav-item
+								a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Item 2
+					else
+						h2 login to see
+				if (auth)
+					.col-8.col-md-1.text-md-right.general-bars.text-right.pl-0.pr-0.pt-2.pb-2.pt-md-2.pb-md-2
+						button.p-0.m-0.bars.true
+							#nav-icon2
+								span
+								span
+								span
+								span
+								span
+								span
+				else
+					.col-8.general-bars.text-right.pl-0.pr-0.pt-2.pb-2.d-md-none.d-block
+						button.p-0.m-0.bars.true
+							#nav-icon2
+								span
+								span
+								span
+								span
+								span
+								span
+	.space.mt-5
+	.main.col-12.col-md-12.p-0
+		.container-fluid.section.col-md-11
+			.container-fluid.main-app.mt-4.pt-4.pt-md-1   
